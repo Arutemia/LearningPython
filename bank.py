@@ -1,18 +1,24 @@
+class Account:
+	def __init__(self):
+		self._balance = 0
+		
+	@property
+	def balance(self):
+		return self._balance
+	
+	def deposit(self, n):
+		self._balance += n
+		
+	def withdraw(self, n):
+		self._balance -= n
+		
 def main():
-    greeting = input("Greeting: ")
-    print(f"${value(greeting)}")
-
-
-def value(greeting):
-    greeting = greeting.strip().lower()
-
-    if greeting.startswith("hello"):
-        return 0
-    elif greeting.startswith("h"):
-        return 20
-    else:
-        return 100
-
-
+	account = Account()
+	print("Balance:", account.balance)
+	account.deposit(100)
+	account.withdraw(50)
+	print("Balance:", account.balance)
+	
 if __name__ == "__main__":
-    main()
+	main()
+	
